@@ -9,10 +9,12 @@ using E_commerce_Site.Data;
 using E_commerce_Site.Models;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_commerce_Site.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = Diger.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IWebHostEnvironment _he;

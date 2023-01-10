@@ -114,8 +114,6 @@ namespace E_commerce_Site.Areas.Identity.Pages.Account
                     PhoneNumber = Input.TelefonNo,
                     PostaKodu = Input.PostaKodu,
                     Role = Input.Role
-
-
                 };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
@@ -133,8 +131,6 @@ namespace E_commerce_Site.Areas.Identity.Pages.Account
                     {
                         await _roleManager.CreateAsync(new IdentityRole(Diger.Role_Birey));
                     }
-                    await _userManager.AddToRoleAsync(user, Diger.Role_Admin);
-
                     if (user.Role == null)
                     {
                         await _userManager.AddToRoleAsync(user, Diger.Role_User);
